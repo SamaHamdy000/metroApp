@@ -1,6 +1,9 @@
+import 'package:flutter/material.dart';
 import 'package:flutter_metro_app/metro_data.dart';
 import 'package:flutter_metro_app/metrostation_class.dart';
 import 'package:flutter_metro_app/transfer_class.dart';
+import 'package:geocoding/geocoding.dart';
+import 'package:geolocator/geolocator.dart';
 
 // ──────────────────────────────────────────────
 // Helpers
@@ -188,3 +191,38 @@ int calculateTripTime(MetroStation from, MetroStation to) {
 
   return (stationsCount * 2) + (transfers * 3);
 }
+
+
+/// Get LatLng from street name
+Future<Location?> getCoordinatesFromStreet(String street) async {
+  try {
+    List<Location> locations = await locationFromAddress(street);
+    if (locations.isEmpty) return null;
+    return locations.first;
+  } catch (e) {
+    return null;
+  }
+}
+
+/// Get nearest metro station from given latitude & longitude
+MetroStation? getNearestStation(double lat, double lng) {
+  MetroStation? closest;
+  double minDistance = double.infinity;
+
+  for (final station in metroStations) {
+    double distance = Geolocator.distanceBetween(
+      lat,
+      lng,
+      station.lat,
+      station.lng,
+    );
+
+    if (distance < minDistance) {
+      minDistance = distance;
+      closest = station;
+    }
+  }
+
+  return closest;
+}
+

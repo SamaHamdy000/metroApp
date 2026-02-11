@@ -3,17 +3,27 @@ import 'package:flutter_metro_app/metrostation_class.dart';
 
 final List<MetroStation> metroStations = [
   // ================= Line 1 =================
-  MetroStation(name: 'Helwan', line: 1, lat: 29.8619, lng: 31.3170),
-  MetroStation(name: 'Ain Helwan', line: 1, lat: 29.8572, lng: 31.3148),
-  MetroStation(name: 'Helwan University', line: 1, lat: 29.8530, lng: 31.3098),
-  MetroStation(name: 'Wadi Hof', line: 1, lat: 29.8965, lng: 31.3150),
+  MetroStation(name: 'Helwan', line: 1, lat: 29.8489, lng: 31.3342), // صحيح
+  MetroStation(
+    name: 'Ain Helwan',
+    line: 1,
+    lat: 29.8627,
+    lng: 31.3250,
+  ), // تصحيح طفيف
+  MetroStation(
+    name: 'Helwan University',
+    line: 1,
+    lat: 29.8690,
+    lng: 31.3204,
+  ), // كانت خاطئة، الآن أدق
+  MetroStation(name: 'Wadi Hof', line: 1, lat: 29.8965, lng: 31.3150), // مقبول
   MetroStation(name: 'Hadayek Helwan', line: 1, lat: 29.9044, lng: 31.3211),
   MetroStation(name: 'El-Masra', line: 1, lat: 29.9129, lng: 31.3166),
   MetroStation(name: 'Tura El-Esmant', line: 1, lat: 29.9269, lng: 31.3153),
   MetroStation(name: 'Kozzika', line: 1, lat: 29.9311, lng: 31.3162),
   MetroStation(name: 'Tura El-Balad', line: 1, lat: 29.9336, lng: 31.3179),
   MetroStation(name: 'Sakanat El-Maadi', line: 1, lat: 29.9609, lng: 31.3278),
-  MetroStation(name: 'El-Maadi', line: 1, lat: 29.9598395, lng: 31.2580736),
+  MetroStation(name: 'El-Maadi', line: 1, lat: 29.9598, lng: 31.3281),
   MetroStation(name: 'Hadayek El-Maadi', line: 1, lat: 29.9630, lng: 31.3295),
   MetroStation(name: 'Dar El-Salam', line: 1, lat: 29.9663, lng: 31.3303),
   MetroStation(name: 'El-Zahraa', line: 1, lat: 29.9954, lng: 31.2317),
@@ -24,7 +34,12 @@ final List<MetroStation> metroStations = [
   MetroStation(name: 'Sadat', line: 1, lat: 30.0446, lng: 31.2356),
   MetroStation(name: 'Nasser', line: 1, lat: 30.0536, lng: 31.2378),
   MetroStation(name: 'Orabi', line: 1, lat: 30.0575, lng: 31.2425),
-  MetroStation(name: 'Al-Shohadaa', line: 1, lat: 30.0620, lng: 31.2461),
+  MetroStation(
+    name: 'Al-Shohadaa',
+    line: 1,
+    lat: 30.0620,
+    lng: 31.2461,
+  ), // مشترك
   MetroStation(name: 'Ghamra', line: 1, lat: 30.0689, lng: 31.2647),
   MetroStation(name: 'El-Demerdash', line: 1, lat: 30.0772, lng: 31.2779),
   MetroStation(name: 'Manshiet El-Sadr', line: 1, lat: 30.0822, lng: 31.2889),
@@ -45,6 +60,7 @@ final List<MetroStation> metroStations = [
   MetroStation(name: 'New El-Marg', line: 1, lat: 30.1633, lng: 31.3372),
 
   // ================= Line 2 =================
+  // معظمها صحيح أو قريب جداً، لا تغييرات كبيرة مطلوبة
   MetroStation(name: 'Shubra El-Kheima', line: 2, lat: 30.1203, lng: 31.2447),
   MetroStation(name: 'Kolleyyet El-Zeraa', line: 2, lat: 30.1130, lng: 31.2483),
   MetroStation(name: 'Mezallat', line: 2, lat: 30.1049, lng: 31.2479),
@@ -67,6 +83,7 @@ final List<MetroStation> metroStations = [
   MetroStation(name: 'El-Mounib', line: 2, lat: 29.9803, lng: 31.2130),
 
   // ================= Line 3 =================
+  // هنا بعض الإحداثيات كانت منحرفة بشكل واضح، خاصة في الجزء الغربي
   MetroStation(name: 'Adly Mansour', line: 3, lat: 30.1469, lng: 31.4214),
   MetroStation(name: 'El-Haykestep', line: 3, lat: 30.1436, lng: 31.4048),
   MetroStation(
